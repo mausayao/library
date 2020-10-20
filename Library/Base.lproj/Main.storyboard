@@ -43,7 +43,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TutorialCell" id="TAc-AJ-aCY" userLabel="TutorialCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TutorialCell" id="TAc-AJ-aCY" userLabel="TutorialCell" customClass="TutorialCell" customModule="Library" customModuleProvider="target">
                                         <rect key="frame" x="92" y="0.0" width="230" height="192"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tz3-7u-Xic">
@@ -76,6 +76,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="230" height="192"/>
+                                        <connections>
+                                            <outlet property="thumbnailImageView" destination="wu1-EZ-5Ji" id="Fbd-KS-fXw"/>
+                                            <outlet property="titleLabel" destination="o7I-KM-dj7" id="32G-Wk-PCH"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
