@@ -99,11 +99,29 @@
                     </view>
                     <navigationItem key="navigationItem" id="xYx-Ss-YpN">
                         <rightBarButtonItems>
-                            <barButtonItem image="trash" catalog="system" id="5UW-ZR-Cr1"/>
-                            <barButtonItem image="play" catalog="system" id="MyI-14-ccF"/>
-                            <barButtonItem title="Item" image="arrow.2.circlepath" catalog="system" id="W22-Gb-27T"/>
+                            <barButtonItem image="trash" catalog="system" id="5UW-ZR-Cr1">
+                                <connections>
+                                    <action selector="deleteSelectedItems:" destination="iap-3I-cTA" id="xIX-2H-wNd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="play" catalog="system" id="MyI-14-ccF">
+                                <connections>
+                                    <action selector="applyUpdates:" destination="iap-3I-cTA" id="Sqy-iN-CNA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="arrow.2.circlepath" catalog="system" id="W22-Gb-27T">
+                                <connections>
+                                    <action selector="triggerUpdates:" destination="iap-3I-cTA" id="USO-pc-SzI"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="applyUpdateButton" destination="MyI-14-ccF" id="D8T-WS-BZA"/>
+                        <outlet property="collectionView" destination="ACX-fr-jsY" id="jr3-Ow-pVA"/>
+                        <outlet property="deleteButton" destination="5UW-ZR-Cr1" id="QWA-D2-muk"/>
+                        <outlet property="updateButton" destination="W22-Gb-27T" id="nBP-me-f2p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rdb-oM-bNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
