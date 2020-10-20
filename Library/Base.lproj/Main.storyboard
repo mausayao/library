@@ -134,6 +134,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoH-zU-5U8">
                                         <rect key="frame" x="0.0" y="70" width="92" height="30"/>
                                         <state key="normal" title="Add to queue"/>
+                                        <connections>
+                                            <action selector="toogleQueued:" destination="eEL-Hs-C8Y" eventType="touchUpInside" id="7HM-fR-SC0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -202,6 +205,13 @@
                             <constraint firstItem="8Dj-6L-z09" firstAttribute="leading" secondItem="fTy-8a-1Xq" secondAttribute="leading" constant="16" id="zIR-S3-SsS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="oeD-L0-l6M" id="Lmk-OA-kwT"/>
+                        <outlet property="imageView" destination="mLj-iM-FkN" id="Jkb-SY-zVJ"/>
+                        <outlet property="publishDateLabel" destination="dwz-SU-vFQ" id="Dfq-GS-ko5"/>
+                        <outlet property="queueButton" destination="aoH-zU-5U8" id="Wpg-f7-VjI"/>
+                        <outlet property="titleLabel" destination="O83-D7-Oqa" id="VVR-M0-YnK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61d-7o-kxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
