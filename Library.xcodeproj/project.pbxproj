@@ -23,6 +23,7 @@
 		2228C9B1253F4A2D0023D487 /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228C9B0253F4A2D0023D487 /* TutorialCell.swift */; };
 		2228C9B4253F52190023D487 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228C9B3253F52190023D487 /* ContentCell.swift */; };
 		2228C9B7253F85F40023D487 /* QueueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228C9B6253F85F40023D487 /* QueueCell.swift */; };
+		22CE477E2541FCC9004422BE /* Uicolor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CE477D2541FCC9004422BE /* Uicolor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2228C9B0253F4A2D0023D487 /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
 		2228C9B3253F52190023D487 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		2228C9B6253F85F40023D487 /* QueueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueCell.swift; sourceTree = "<group>"; };
+		22CE477D2541FCC9004422BE /* Uicolor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uicolor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		22269E96253E0D8600CBB85B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				22CE477D2541FCC9004422BE /* Uicolor+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22269E81253E0AE000CBB85B /* LibraryController.swift in Sources */,
+				22CE477E2541FCC9004422BE /* Uicolor+Extensions.swift in Sources */,
 				22269EA8253E417900CBB85B /* Tutorial.swift in Sources */,
 				2228C9B7253F85F40023D487 /* QueueCell.swift in Sources */,
 				22269E9C253E14F800CBB85B /* TutorialDetailController.swift in Sources */,
