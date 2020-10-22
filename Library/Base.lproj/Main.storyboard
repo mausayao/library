@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qf4-mw-Qak">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -109,7 +109,7 @@
                                     <action selector="applyUpdates:" destination="iap-3I-cTA" id="Sqy-iN-CNA"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="arrow.2.circlepath" catalog="system" id="W22-Gb-27T">
+                            <barButtonItem title="Item" image="arrow.clockwise" catalog="system" id="W22-Gb-27T">
                                 <connections>
                                     <action selector="triggerUpdates:" destination="iap-3I-cTA" id="USO-pc-SzI"/>
                                 </connections>
@@ -377,7 +377,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
