@@ -66,6 +66,7 @@ extension LibraryController {
             cell.titleLabel.text = tutorial.title
             cell.thumbnailImageView.image = tutorial.image
             cell.thumbnailImageView.backgroundColor = tutorial.imageBackGroundColor
+            cell.layer.cornerRadius = 10
             
             return cell
             
@@ -76,7 +77,6 @@ extension LibraryController {
         var currentSnapshot = NSDiffableDataSourceSnapshot<TutorialCollection, Tutorial>()
         
         tutorialsCollections.forEach { collection in
-            print(collection.title)
             currentSnapshot.appendSections([collection])
             currentSnapshot.appendItems(collection.tutorials)
         }
