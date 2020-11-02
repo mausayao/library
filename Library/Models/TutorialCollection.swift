@@ -10,7 +10,7 @@ import Foundation
 struct TutorialCollection: Decodable, Hashable {
     let title: String
     let tutorials: [Tutorial]
-    var identifier = UUID().uuidString
+    let identifier = UUID().uuidString
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)

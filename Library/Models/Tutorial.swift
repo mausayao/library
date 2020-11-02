@@ -11,11 +11,11 @@ class Tutorial: Decodable, Hashable {
     let title: String
     let thumbnail: String
     let artworkColor: String
-    let isQueued: Bool
+    var isQueued: Bool
     let publishDate: Date
     let content: [Section]
-    let updateCount: Int
-    var identifier  = UUID().uuidString
+    var updateCount: Int
+    let identifier = UUID().uuidString
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
@@ -39,5 +39,7 @@ extension Tutorial {
         return formatter.string(from: publishDate)
     }
 }
+
+
 
 
