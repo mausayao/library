@@ -17,16 +17,6 @@ class Tutorial: Decodable, Hashable {
     let updateCount: Int
     var identifier  = UUID().uuidString
     
-//    init(title: String, thumbnail: String, artworkColor: String, isQueued: Bool, publishDate: Date, content: [Section], updateCount: Int) {
-//        self.title = title
-//        self.thumbnail = thumbnail
-//        self.artworkColor = artworkColor
-//        self.isQueued = isQueued
-//        self.publishDate = publishDate
-//        self.content = content
-//        self.updateCount = updateCount
-//    }
-    
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }
