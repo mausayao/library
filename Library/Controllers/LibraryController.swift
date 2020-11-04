@@ -20,6 +20,7 @@ final class LibraryController: UIViewController {
     
     private func setupView() {
         self.title = "Library"
+        collectionView.register(TitleSuplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleSuplementaryView.reuseIdentifier)
         collectionView.collectionViewLayout = configureCollectionViewLayout()
         configureDataSource()
         configureSnapshot()
@@ -47,6 +48,11 @@ extension LibraryController {
             section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
             section.interGroupSpacing = 10
             
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+            
+            section.boundarySupplementaryItems = [sectionHeader]
+            
             return section
             
         }
@@ -69,6 +75,17 @@ extension LibraryController {
             cell.layer.cornerRadius = 10
             
             return cell
+            
+        }
+        
+        dataSource.supplementaryViewProvider = {[weak self] (collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? in
+            if let self = self, let titleSuplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleSuplementaryView.reuseIdentifier, for: indexPath) as? TitleSuplementaryView {
+                let tutorialCollection = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+                titleSuplementaryView.textLabel.text = tutorialCollection.title
+                return titleSuplementaryView
+            } else {
+                return nil
+            }
             
         }
     }

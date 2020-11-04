@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2214478A25521B4900C7D194 /* TitleSuplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214478925521B4900C7D194 /* TitleSuplementaryView.swift */; };
 		22269E7D253E0AE000CBB85B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22269E7C253E0AE000CBB85B /* AppDelegate.swift */; };
 		22269E7F253E0AE000CBB85B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22269E7E253E0AE000CBB85B /* SceneDelegate.swift */; };
 		22269E81253E0AE000CBB85B /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22269E80253E0AE000CBB85B /* LibraryController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2214478925521B4900C7D194 /* TitleSuplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSuplementaryView.swift; sourceTree = "<group>"; };
 		22269E79253E0AE000CBB85B /* Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Library.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22269E7C253E0AE000CBB85B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22269E7E253E0AE000CBB85B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				2228C9B0253F4A2D0023D487 /* TutorialCell.swift */,
 				2228C9B3253F52190023D487 /* ContentCell.swift */,
 				2228C9B6253F85F40023D487 /* QueueCell.swift */,
+				2214478925521B4900C7D194 /* TitleSuplementaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				22269EA2253E410100CBB85B /* Section.swift in Sources */,
 				22269E7D253E0AE000CBB85B /* AppDelegate.swift in Sources */,
 				2228C9B1253F4A2D0023D487 /* TutorialCell.swift in Sources */,
+				2214478A25521B4900C7D194 /* TitleSuplementaryView.swift in Sources */,
 				22269EA5253E413300CBB85B /* Video.swift in Sources */,
 				22269E99253E14B800CBB85B /* QueuedTutorialController.swift in Sources */,
 				22269E7F253E0AE000CBB85B /* SceneDelegate.swift in Sources */,
