@@ -9,6 +9,7 @@ import UIKit
 
 class TutorialDetailController: UIViewController {
     
+    static let identifier = String(describing: TutorialDetailController.self)
     private let tutorial: Tutorial
 
     @IBOutlet weak var imageView: UIImageView!
@@ -25,10 +26,16 @@ class TutorialDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    init?(coder: NSCoder, tutorial: Tutorial) {
+        self.tutorial = tutorial
+        super.init(coder: coder)
     }
     
     private func setupView() {

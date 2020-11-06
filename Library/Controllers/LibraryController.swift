@@ -20,6 +20,7 @@ final class LibraryController: UIViewController {
     
     private func setupView() {
         self.title = "Library"
+        collectionView.delegate = self
         collectionView.register(TitleSuplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleSuplementaryView.reuseIdentifier)
         collectionView.collectionViewLayout = configureCollectionViewLayout()
         configureDataSource()
@@ -99,5 +100,19 @@ extension LibraryController {
         }
         
         dataSource.apply(currentSnapshot, animatingDifferences: false)
+    }
+}
+
+// MARK: UICollectonViewDelegate
+
+extension LibraryController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let tutoria = dataSource.itemIdentifier(for: indexPath),
+           let tutorialDetailController = storyboard?.instantiateViewController(
+            identifier: TutorialDetailController.identifier, creator: { coder  in
+                return TutorialDetailController(coder: coder, tutorial: tutoria)
+            }) {
+            show(tutorialDetailController, sender: nil)
+        }
     }
 }

@@ -207,7 +207,7 @@
         <!--Tutorial Detail Controller-->
         <scene sceneID="kei-b3-l6Q">
             <objects>
-                <viewController id="eEL-Hs-C8Y" customClass="TutorialDetailController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialDetailController" id="eEL-Hs-C8Y" customClass="TutorialDetailController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kuu-lP-l5e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61d-7o-kxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334.7826086956525" y="164.73214285714286"/>
+            <point key="canvasLocation" x="2199" y="165"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yZN-XJ-zES">
