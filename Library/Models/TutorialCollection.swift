@@ -19,3 +19,9 @@ struct TutorialCollection: Decodable, Hashable {
         return lhs.identifier == rhs.identifier
     }
 }
+
+extension TutorialCollection {
+    var queuedTutorial: [Tutorial]  {
+        return tutorials.filter { $0.isQueued }
+    }
+}
