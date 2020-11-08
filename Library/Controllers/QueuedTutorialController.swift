@@ -28,14 +28,32 @@ class QueuedTutorialController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Tutorial>!
+    private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureSnapshot()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) {
+            [weak self] _ in
+            guard let self = self else {return}
+            self.triggerUpdates()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                [weak self] in
+                guard let self = self else {return}
+                self.applyUpdates()
+            }
+        }
     }
     
     func setupView() {
@@ -107,6 +125,30 @@ extension QueuedTutorialController {
         let badgeView = collectionView.supplementaryView(forElementKind: QueuedTutorialController.badgeElementKind, at: randomIndex)
         badgeView?.isHidden = false
         
+    }
+    
+    @IBAction func applyUpdates() {
+        let tutorials = dataSource.snapshot().itemIdentifiers
+        
+        if var firstTutorial = tutorials.first, tutorials.count > 2 {
+            let tutorialsWithUpdate = tutorials.filter { $0.updateCount > 0}
+            var currentSnapShot = dataSource.snapshot()
+            
+            tutorialsWithUpdate.forEach { (tutorial) in
+                if tutorial != firstTutorial {
+                    currentSnapShot.moveItem(tutorial, beforeItem: firstTutorial)
+                    firstTutorial = tutorial
+                    tutorial.updateCount = 0
+                }
+                
+                if let indexPath = dataSource.indexPath(for: tutorial) {
+                    let badgeView = collectionView.supplementaryView(forElementKind: QueuedTutorialController.badgeElementKind, at: indexPath)
+                    badgeView?.isHidden = true
+                }
+            }
+            
+            dataSource.apply(currentSnapShot, animatingDifferences: true)
+        }
     }
     
 }

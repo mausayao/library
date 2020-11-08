@@ -124,7 +124,11 @@
                                     <action selector="deleteItems" destination="iap-3I-cTA" id="RK2-Dt-BaC"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="play.fill" catalog="system" id="X0x-of-990"/>
+                            <barButtonItem image="play.fill" catalog="system" id="X0x-of-990">
+                                <connections>
+                                    <action selector="applyUpdates" destination="iap-3I-cTA" id="pnP-CP-SA6"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="arrow.clockwise" catalog="system" id="GSm-vK-tUH">
                                 <connections>
                                     <action selector="triggerUpdates" destination="iap-3I-cTA" id="5Wa-TI-ogr"/>
