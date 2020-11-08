@@ -19,9 +19,10 @@ class QueuedTutorialController: UIViewController {
         return formatter
     }()
     
-    @IBOutlet weak var deleteButton: UIBarButtonItem!
-    @IBOutlet weak var applyUpdateButton: UIBarButtonItem!
-    @IBOutlet weak var updateButton: UIBarButtonItem!
+    
+    @IBOutlet var updateButton: UIBarButtonItem!
+    @IBOutlet var applyUpdatesButton: UIBarButtonItem!
+    @IBOutlet var deleteButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Tutorial>!
@@ -29,7 +30,6 @@ class QueuedTutorialController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,21 +40,18 @@ class QueuedTutorialController: UIViewController {
         self.title = "Queue"
         navigationItem.leftBarButtonItem = editButtonItem
         navigationItem.rightBarButtonItem = nil
+        isEditing = false
         
         collectionView.collectionViewLayout = configuraCollectionViewLayout()
         configureDataSource()
     }
     
     @IBAction func deleteSelectedItems(_ sender: UIBarButtonItem) {
+        
     }
     
-    @IBAction func applyUpdates(_ sender: UIBarButtonItem) {
-    }
-    
-    @IBAction func triggerUpdates(_ sender: UIBarButtonItem) {
-    }
 }
-
+// MARK: - Nav bar -
 extension QueuedTutorialController {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -65,18 +62,38 @@ extension QueuedTutorialController {
             navigationItem.rightBarButtonItem = deleteButton
         } else {
             navigationItem.rightBarButtonItem = nil
-            navigationItem.rightBarButtonItems = [self.applyUpdateButton, self.updateButton]
+            navigationItem.rightBarButtonItems = [self.applyUpdatesButton, self.updateButton]
         }
-        
+
         collectionView.allowsMultipleSelection = true
         collectionView.indexPathsForVisibleItems.forEach { indexPath in
             guard let cell = collectionView.cellForItem(at: indexPath) as? QueueCell else { return }
             cell.isEditing = isEditing
-            
+
             if !isEditing {
                 cell.isSelected = false
             }
         }
+    }
+    
+    @IBAction func deleteItems() {
+        // Itens selecionados
+        guard let selectedIndexPath = collectionView.indexPathsForSelectedItems else { return }
+        
+        // Tutorials selecionados
+        let tutorials = selectedIndexPath.compactMap { dataSource.itemIdentifier(for: $0) }
+        
+        let queuedTutorials = DataSource.shared.tutorials.flatMap { $0.queuedTutorial }
+        let tutorialsToUnqueued = Set(tutorials).intersection(queuedTutorials)
+        tutorialsToUnqueued.forEach { $0.isQueued = false}
+        
+        var currentSnapshot = dataSource.snapshot()
+        currentSnapshot.deleteItems(tutorials)
+        
+        dataSource.apply(currentSnapshot, animatingDifferences: true)
+        
+        isEditing.toggle()
+        
     }
     
 }

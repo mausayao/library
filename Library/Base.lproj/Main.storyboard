@@ -119,28 +119,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="xYx-Ss-YpN">
                         <rightBarButtonItems>
-                            <barButtonItem image="trash" catalog="system" id="5UW-ZR-Cr1">
+                            <barButtonItem systemItem="trash" id="xko-e8-Glk">
                                 <connections>
-                                    <action selector="deleteSelectedItems:" destination="iap-3I-cTA" id="xIX-2H-wNd"/>
+                                    <action selector="deleteItems" destination="iap-3I-cTA" id="RK2-Dt-BaC"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="play" catalog="system" id="MyI-14-ccF">
-                                <connections>
-                                    <action selector="applyUpdates:" destination="iap-3I-cTA" id="Sqy-iN-CNA"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="arrow.clockwise" catalog="system" id="W22-Gb-27T">
-                                <connections>
-                                    <action selector="triggerUpdates:" destination="iap-3I-cTA" id="USO-pc-SzI"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem image="play.fill" catalog="system" id="X0x-of-990"/>
+                            <barButtonItem image="arrow.clockwise" catalog="system" id="GSm-vK-tUH"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="applyUpdateButton" destination="MyI-14-ccF" id="D8T-WS-BZA"/>
+                        <outlet property="applyUpdatesButton" destination="X0x-of-990" id="Lyy-cc-7ZN"/>
                         <outlet property="collectionView" destination="ACX-fr-jsY" id="jr3-Ow-pVA"/>
-                        <outlet property="deleteButton" destination="5UW-ZR-Cr1" id="QWA-D2-muk"/>
-                        <outlet property="updateButton" destination="W22-Gb-27T" id="nBP-me-f2p"/>
+                        <outlet property="deleteButton" destination="xko-e8-Glk" id="96Z-9I-1MX"/>
+                        <outlet property="updateButton" destination="GSm-vK-tUH" id="Ith-Bv-UME"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rdb-oM-bNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -401,8 +393,7 @@
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
-        <image name="play" catalog="system" width="120" height="128"/>
-        <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <namedColor name="rw-bg">
             <color red="0.94900000095367432" green="0.9649999737739563" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
